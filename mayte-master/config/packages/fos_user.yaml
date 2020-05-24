@@ -1,0 +1,28 @@
+fos_user:
+    db_driver:      orm # can be orm or odm
+    firewall_name:  login
+    user_class:     App\Entity\Security\User
+
+#    profile:
+#        form:
+#            type: Infrastructure\Application\Sonata\UserBundle\Form\Type\ProfileFormType
+#
+#    registration:
+#        form:
+#            type: Infrastructure\Application\Sonata\UserBundle\Form\Type\RegistrationStudentFormType
+#            name: registration
+#        confirmation:
+#            enabled: true
+#            template: transactionals/fosuserbundle/registration.html.twig
+#
+#    resetting:
+#        email:
+#            template: transactionals/fosuserbundle/resetting.html.twig
+
+    service:
+#        user_manager: sonata.user.orm.user_manager
+        mailer: fos_user.mailer.twig_swift
+
+    from_email:
+        address: '%env(MAILER_USER)%'
+        sender_name: '%env(MAILER_USER)%'

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="App\Entity\Library\Movie" table="library_movie"  repository-class="App\Repository\Library\MovieReposistory">
+        <id name="id" type="integer">
+            <generator strategy="AUTO" />
+        </id>
+        <field name="title" type="string" length="255"/>
+        <field name="rated" type="string" length="255"/>
+        <field name="released" type="date"/>
+        <field name="runtime" type="integer"/>
+        <field name="genre" type="string" length="255"/>
+        <field name="director" type="string" length="255"/>
+        <field name="writer" type="string" length="255"/>
+        <field name="actors" type="string" length="255"/>
+        <field name="plot" type="string" length="255"/>
+        <field name="language" type="string" length="255"/>
+        <field name="country" type="string" length="255"/>
+        <field name="awards" type="string" length="255"/>
+    </entity>
+
+</doctrine-mapping>

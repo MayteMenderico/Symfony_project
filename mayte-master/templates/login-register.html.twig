@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link href="/signin.css" rel="stylesheet">
+{% endblock %}
+{% block body %}
+    {{ form_start(register) }}
+    <div class="text-center">
+        <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    </div>
+
+    <div class="row">
+        <div class="col-md">
+            {{ form_row(register.name) }}
+        </div>
+        <div class="col-md">
+            {{ form_row(register.lastName) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md">
+            {{ form_row(register.username) }}
+        </div>
+        <div class="col-md">
+            {{ form_row(register.email) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md">
+            {{ form_row(register.password.first) }}
+        </div>
+        <div class="col-md">
+            {{ form_row(register.password.second) }}
+        </div>
+    </div>
+
+    {% set errors = form_errors(register) %}
+    {% if errors is not empty %}
+        <div class="alert alert-danger" role="alert">
+            {{ form_errors(register) }}
+        </div>
+    {% endif %}
+    {{ form_end(register) }}
+{% endblock %}

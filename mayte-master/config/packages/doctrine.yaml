@@ -1,0 +1,20 @@
+doctrine:
+  dbal:
+    driver: 'pdo_mysql'
+    url: '%env(resolve:DATABASE_URL)%'
+
+    # IMPORTANT: You MUST configure your server version,
+    # either here or in the DATABASE_URL env var (see .env file)
+    #server_version: '5.7'
+  orm:
+    auto_generate_proxy_classes: true
+    entity_managers:
+      default:
+        mappings:
+          App:
+            is_bundle: false
+            type: xml
+            dir: '%kernel.project_dir%/config/resources/doctrine'
+            prefix: 'App\Entity'
+            alias: AppEntity
+          FOSUserBundle: ~

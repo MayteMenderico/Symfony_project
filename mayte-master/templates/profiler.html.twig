@@ -1,0 +1,40 @@
+{% extends 'logged.html.twig' %}
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+        {{ form_start(register) }}
+        <div class="row">
+            <div class="col-md">
+                {{ form_row(register.name) }}
+            </div>
+            <div class="col-md">
+                {{ form_row(register.lastName) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                {{ form_row(register.username) }}
+            </div>
+            <div class="col-md">
+                {{ form_row(register.email) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                {{ form_row(register.password.first) }}
+            </div>
+            <div class="col-md">
+                {{ form_row(register.password.second) }}
+            </div>
+        </div>
+
+        {% set errors = form_errors(register) %}
+        {% if errors is not empty %}
+            <div class="alert alert-danger" role="alert">
+                {{ form_errors(register) }}
+            </div>
+        {% endif %}
+        {{ form_end(register) }}
+        </div>
+    </div>
+{% endblock %}
